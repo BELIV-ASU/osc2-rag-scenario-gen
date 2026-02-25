@@ -1,201 +1,162 @@
 # OSC2-RAG-Scenario-Gen
 
-**Retrieval-Augmented Scenario Generation for Autonomous Driving
-Simulation (OSC2 + CARLA--Autoware)**
+## Retrieval-Augmented Scenario Generation for Autonomous Driving Simulation
 
-Official implementation of our RAG-based scenario synthesis and
-evaluation framework for autonomous driving simulation using
-**OpenSCENARIO 2 (OSC2)**, **Safety Pool conversion**, and
-**CARLA--Autoware co-simulation**.
+This repository contains the research implementation of a
+Retrieval-Augmented Generation (RAG) framework for structured autonomous
+driving scenario synthesis using **OpenSCENARIO 2 (OSC2)**, integrated
+with **Safety Pool conversion** and **CARLA--Autoware co-simulation**.
 
-------------------------------------------------------------------------
+The project was developed as part of a controlled simulation-based study
+comparing three scenario generation paradigms:
 
-## 🚀 Overview
+-   Template-based generation (prior work baseline)
+-   From-scratch LLM generation
+-   Retrieval-Augmented Generation (RAG) (proposed method)
 
-Autonomous driving systems require diverse, structured, and controllable
-safety scenarios for stress testing. Traditional template-based
-generation is rigid and limited in diversity, while naïve LLM generation
-suffers from hallucination and structural invalidity.
-
-This project introduces a **Retrieval-Augmented Generation (RAG)**
-framework that:
-
--   Grounds scenario synthesis in reusable OSC2 snippets\
--   Reduces hallucinations and structural errors\
--   Improves scenario diversity and validity\
--   Supports Safety Pool → CARLA conversion\
--   Enables reproducible evaluation under a fixed CARLA--Autoware stack
-
-We compare:
-
-1.  **Template-based generation (baseline)**\
-2.  **From-scratch LLM generation**\
-3.  **RAG-based generation (proposed)**
+This repository documents the pipeline, experimental setup, evaluation
+logic, and supporting utilities used in that study.
 
 ------------------------------------------------------------------------
 
-## 🏗 System Architecture
+## Project Motivation
 
-    Natural Language Prompt
-              ↓
-       Snippet Retrieval (RAG)
-              ↓
-        OSC2 Scenario Synthesis
-              ↓
-     Safety Pool Conversion
-              ↓
-     CARLA–Autoware Co-Simulation
-              ↓
-       Log Collection + Scoring
+Autonomous driving systems require structured, diverse, and controllable
+safety scenarios for stress testing. Traditional template libraries
+provide structural validity but limit diversity. Pure LLM-based
+generation increases diversity but often suffers from hallucination and
+structural inconsistency.
 
-------------------------------------------------------------------------
+This work introduces a snippet-level retrieval mechanism that:
 
-## 📂 Repository Structure
+-   Grounds generation in reusable OSC2 components
+-   Improves structural correctness
+-   Enhances diversity while maintaining validity
+-   Enables reproducible comparative evaluation
 
-    osc2-rag-scenario-gen/
-    │
-    ├── rag_pipeline/              
-    ├── osc2_templates/            
-    ├── snippet_library/           
-    ├── safety_pool_converter/     
-    ├── evaluation/                
-    ├── experiments/               
-    ├── figures/                   
-    ├── scripts/                   
-    └── README.md
+The framework is designed specifically for **simulation-based stress
+testing** under a fixed CARLA--Autoware stack. It is not intended as a
+real-world safety validation system.
 
 ------------------------------------------------------------------------
 
-## 🔧 Requirements
+## What This Repository Contains
 
--   Python 3.10+
--   CARLA (project-tested version)
--   Autoware (project-tested version)
--   OpenSCENARIO 2 toolchain
--   OpenAI API (or compatible LLM API)
+This repository includes:
 
-Install dependencies:
+### 1. RAG Pipeline Logic
 
-``` bash
-pip install -r requirements.txt
-```
+-   Retrieval of reusable geometry, spawn, and behavior snippets
+-   Prompt construction and LLM orchestration
+-   Structured OSC2 scenario assembly
 
-------------------------------------------------------------------------
+### 2. Template-Based Baseline
 
-## ⚙️ Setup
+-   Handcrafted OSC2 scenario templates derived from prior work
+-   Used as the controlled baseline for comparison
 
-### Start CARLA
+### 3. From-Scratch LLM Generation
 
-``` bash
-./CarlaUE4.sh
-```
+-   Direct natural-language-to-OSC2 generation without retrieval
+    grounding
+-   Included for ablation comparison
 
-### Launch Autoware
+### 4. Snippet Library
 
-Start Autoware in simulation mode.
+-   Modular OSC2 components
+-   Geometry primitives
+-   Spawn configurations
+-   Behavior fragments
 
-### Set API Key
+These snippets form the retrieval corpus used by the RAG system.
 
-``` bash
-export OPENAI_API_KEY="your_key_here"
-```
+### 5. Safety Pool Conversion Tools
 
-------------------------------------------------------------------------
+-   Conversion utilities mapping OSC2 scenarios to CARLA-compatible
+    execution format
+-   Ensures consistency with the evaluation stack
 
-## 🧠 Running Scenario Generation
+### 6. Evaluation and Metrics
 
-### RAG-Based
+-   Log parsing utilities
+-   Composite scoring functions (0--1 scale)
+-   Difficulty categorization logic
+-   Comparative plotting utilities
 
-``` bash
-python scripts/run_rag_generation.py     --prompt "A vehicle cuts in aggressively during lane merge"     --output_dir outputs/rag/
-```
+The metric design is an engineering heuristic for comparative stress
+testing, not a theoretically optimal safety metric.
 
-### Template-Based
+### 7. Experiment Configurations
 
-``` bash
-python scripts/run_template_generation.py     --template_id lane_cut_in     --output_dir outputs/template/
-```
-
-### From-Scratch LLM
-
-``` bash
-python scripts/run_llm_generation.py     --prompt "A vehicle cuts in aggressively during lane merge"     --output_dir outputs/llm/
-```
+-   Scripts and configurations used to reproduce experimental
+    comparisons
+-   Difficulty alteration experiments
+-   Coverage and diversity analysis
 
 ------------------------------------------------------------------------
 
-## 🚘 Simulation & Evaluation
+## System-Level Workflow (Conceptual)
 
-Run simulation:
+Natural Language Prompt\
+→ Snippet Retrieval\
+→ OSC2 Scenario Synthesis\
+→ Safety Pool Conversion\
+→ CARLA--Autoware Co-Simulation\
+→ Log Collection\
+→ Composite Scoring
 
-``` bash
-python scripts/run_simulation.py     --scenario outputs/rag/scenario.osc2
-```
-
-Compute metrics:
-
-``` bash
-python scripts/compute_metrics.py     --log_dir logs/scenario_X/
-```
-
-Outputs include:
-
--   Ego trajectory logs\
--   Collision events\
--   Route completion ratio\
--   Composite difficulty score (0--1 scale)
+This repository reflects the implementation of that full pipeline.
 
 ------------------------------------------------------------------------
 
-## 📊 Evaluation Philosophy
+## Scope and Limitations
 
-The scoring system is an **engineering heuristic for comparative stress
-testing**, not a theoretically optimal safety metric.
+-   Designed for controlled simulation experiments
+-   Evaluated under a fixed CARLA--Autoware stack
+-   Baseline comparison limited to prior internal template system
+-   Not validated on real vehicles
+-   Metrics are comparative engineering heuristics
 
-This framework is intended for:
-
-> Controlled, simulation-based comparative evaluation under a fixed
-> CARLA--Autoware stack.
-
-It is **not** a real-world safety validation system.
-
-------------------------------------------------------------------------
-
-## 🔬 Reproducing Paper Results
-
-``` bash
-python experiments/run_full_comparison.py
-```
+The framework is intended for structured evaluation research, not
+deployment.
 
 ------------------------------------------------------------------------
 
-## ⚠️ Scope & Limitations
+## Research Context
 
--   Designed for simulation-only stress testing\
--   Evaluated under a fixed CARLA--Autoware stack\
--   Baseline comparison limited to prior template system\
--   Not validated on real vehicles\
--   Metric design is heuristic and comparative
+This repository supports a study analyzing:
 
-------------------------------------------------------------------------
+-   Hallucination reduction via retrieval grounding
+-   Structural validity improvements
+-   Snippet-level coverage reconstruction
+-   Scenario diversity characteristics
+-   Controlled difficulty manipulation
 
-## 📖 Citation
-
-``` bibtex
-@misc{osc2_rag_2026,
-  title={Retrieval-Augmented Scenario Generation for Autonomous Driving Simulation},
-  author={Your Name and Coauthors},
-  year={2026},
-  note={GitHub repository},
-  url={https://github.com/BELIV-ASU/osc2-rag-scenario-gen}
-}
-```
+All experiments were conducted within a consistent simulation
+environment to ensure fairness.
 
 ------------------------------------------------------------------------
 
-## 🤝 Contributing
+## Intended Audience
 
-Pull requests are welcome. Please open an issue first to discuss major
-changes.
+This repository is intended for:
+
+-   Researchers working on LLM-grounded scenario synthesis
+-   Autonomous driving simulation researchers
+-   Safety validation and stress-testing researchers
+-   Developers studying structured generation with retrieval grounding
 
 ------------------------------------------------------------------------
+
+## Citation
+
+If you use this repository in academic work, please cite the associated
+paper (to be updated upon publication):
+
+@misc{osc2_rag_2026, title={Retrieval-Augmented Scenario Generation for
+Autonomous Driving Simulation}, author={Your Name and Coauthors},
+year={2026}, note={GitHub repository},
+url={https://github.com/BELIV-ASU/osc2-rag-scenario-gen} }
+
+------------------------------------------------------------------------
+
