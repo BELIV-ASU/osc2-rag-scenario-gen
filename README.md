@@ -199,7 +199,3 @@ Pull requests are welcome. Please open an issue first to discuss major
 changes.
 
 ------------------------------------------------------------------------
-
-## 📝 License
-
-Specify your license here (MIT, Apache 2.0, etc.).
