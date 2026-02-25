@@ -1,0 +1,99 @@
+import basic.osc
+
+scenario simple_npc_only:
+
+    event start
+    event end
+
+    ego_vehicle: Model3
+    npc1: Rubicon
+    npc2: Rubicon
+    npc3: Rubicon
+    npc4: Rubicon
+    npc5: Rubicon
+    npc6: Rubicon
+    npc7: Rubicon
+    npc8: Rubicon
+    npc9: Rubicon
+
+    do serial:
+        spawn_and_drive: parallel(duration: 10s):
+            # Left lane NPCs - slow traffic (10kph)
+            npc1.drive() with:
+                lane(left_of: ego_vehicle, at: start)
+                position(10m, ahead_of: ego_vehicle, at: start)
+                speed(10kph)
+
+            npc2.drive() with:
+                lane(left_of: ego_vehicle, at: start)
+                position(20m, ahead_of: ego_vehicle, at: start)
+                speed(10kph)
+
+            npc3.drive() with:
+                lane(left_of: ego_vehicle, at: start)
+                position(30m, ahead_of: ego_vehicle, at: start)
+                speed(10kph)
+
+            # Same lane NPCs - normal traffic (20kph)
+            npc4.drive() with:
+                lane(same_as: ego_vehicle, at: start)
+                position(10m, ahead_of: ego_vehicle, at: start)
+                speed(20kph)
+
+            npc5.drive() with:
+                lane(same_as: ego_vehicle, at: start)
+                position(20m, ahead_of: ego_vehicle, at: start)
+                speed(20kph)
+
+            npc6.drive() with:
+                lane(same_as: ego_vehicle, at: start)
+                position(30m, ahead_of: ego_vehicle, at: start)
+                speed(20kph)
+
+            # Right lane NPCs - fast traffic (60kph)
+            npc7.drive() with:
+                lane(right_of: ego_vehicle, at: start)
+                position(10m, ahead_of: ego_vehicle, at: start)
+                speed(60kph)
+
+            npc8.drive() with:
+                lane(right_of: ego_vehicle, at: start)
+                position(20m, ahead_of: ego_vehicle, at: start)
+                speed(60kph)
+
+            npc9.drive() with:
+                lane(right_of: ego_vehicle, at: start)
+                position(30m, ahead_of: ego_vehicle, at: start)
+                speed(60kph)
+
+            ego_vehicle.set_position(x: 170.0m, y: 0.0m, z: 0.0m)
+
+scenario top:
+
+    set_map("Town04")
+
+    ego_vehicle: Model3
+    npc1: Rubicon
+    npc2: Rubicon
+    npc3: Rubicon
+    npc4: Rubicon
+    npc5: Rubicon
+    npc6: Rubicon
+    npc7: Rubicon
+    npc8: Rubicon
+    npc9: Rubicon
+
+    do serial:
+        simple_npc_only()
+
+        idle: parallel(duration: 60s):
+            npc1.drive()
+            npc2.drive()
+            npc3.drive()
+            npc4.drive()
+            npc5.drive()
+            npc6.drive()
+            npc7.drive()
+            npc8.drive()
+            npc9.drive()
+

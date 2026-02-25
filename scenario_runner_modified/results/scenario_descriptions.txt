@@ -1,0 +1,40 @@
+The ego vehicle cruises at 55 km/h on a straight highway while a lead car ahead at 50 km/h suddenly brakes at −4 m/s², requiring the ego to maintain gap without overshoot.
+The ego travels at 120 km/h when a vehicle from the adjacent lane cuts in ahead at 70 km/h with a 1.5 s time headway; the ego must settle to a safe following distance smoothly.
+The ego moves at 50 km/h when a slower vehicle at 10 km/h executes an immediate zero-headway cut-in directly ahead; the ego must perform urgent but stable deceleration to avoid collision.
+The ego proceeds at 70 km/h following a 50 km/h lead; the lead car abruptly changes lanes (cut-out), exposing a slower vehicle ahead; the ego must recognize the new target and re-establish ACC control.
+The ego proceeds at 90 km/h behind a 70 km/h lead when the lead suddenly cuts out, revealing open road; the ego should resume set speed without oscillation.
+The ego travels at 100 km/h approaching a moving lead at 20 km/h; ACC must close in safely and stabilize at the commanded headway.
+The ego cruises at 80 km/h and encounters a moving lead at 60 km/h; the system must reduce speed smoothly and track the lead with minimal jerk.
+The ego travels at 90 km/h and approaches a moving lead at 20 km/h; the controller must transition from free-driving to following without overshoot.
+The ego travels at 90 km/h with a moving lead at 60 km/h; the system must achieve steady-state spacing while maintaining comfort limits.
+The ego cruises at 100 km/h approaching a lead at 20 km/h; the system must decelerate promptly and avoid late braking.
+The ego runs at 110 km/h toward a lead at 20 km/h; the system must plan early deceleration and converge to target headway.
+The ego runs at 110 km/h with a lead at 60 km/h; the controller must smoothly reduce speed and maintain time gap under moderate traffic.
+The ego cruises at 120 km/h toward a lead at 20 km/h; ACC must command strong but comfortable deceleration and stabilize.
+The ego cruises at 130 km/h toward a lead at 20 km/h; the system must react quickly while preserving lateral stability during high-speed braking.
+The ego travels at 80 km/h on a straight highway toward a lead at 20 km/h; ACC must manage closure and settle without hunting.
+The ego travels at 80 km/h with a lead at 60 km/h; the system must trim speed and maintain a steady gap despite minor speed variations.
+The ego approaches a stationary target at 70 km/h on a curved road; ACC/AEB must recognize the stopped vehicle through curvature and decelerate to a stop.
+The ego approaches a stationary target at 70 km/h on a straight road; the system must brake timely to avoid impact and stop at a safe distance.
+The ego approaches a stationary target at 80 km/h on a curved road; the controller must handle reduced sensor field of view and still stop comfortably.
+The ego approaches a stationary target at 80 km/h on a straight road; the system must exhibit low jerk and minimal stop-distance error.
+The ego approaches a stationary target at 90 km/h on a curved road; ACC/AEB must compensate for lateral acceleration while braking to a halt.
+The ego approaches a stationary target at 90 km/h on a straight road; the system must avoid late braking and stop with stable yaw.
+The ego approaches a stationary target at 100 km/h on a curved road; the system must manage combined lateral and longitudinal control to avoid the stopped lead.
+The ego approaches a stationary target at 100 km/h on a straight road; ACC/AEB must provide full-stop with headway margin and no rebound motion.
+The ego approaches a stationary target at 110 km/h on a curved road; perception must maintain lock through curvature and initiate early braking.
+The ego approaches a stationary target at 110 km/h on a straight road; the system must meet stopping-distance requirements with acceptable deceleration profiles.
+The ego approaches a stationary target at 120 km/h on a curved road; the controller must balance lane keeping with strong deceleration to a stop.
+The ego approaches a stationary target at 120 km/h on a straight road; the system must execute high-speed AEB and stop with minimal residual distance.
+The ego approaches a stationary target at 130 km/h on a curved road; the system must detect early and maintain stability under high brake demand.
+The ego approaches a stationary target at 130 km/h on a straight road; ACC/AEB must achieve full stop while preserving passenger comfort and straight-line stability.
+The ego travels at 100 km/h in the left lane while a vehicle in the right lane moves at 90 km/h; the system must prevent unlawful/unsafe undertaking by restricting right-lane pass and advising appropriate following.
+The ego cruises with assistance available; driver monitoring detects distraction (eyes off road, hands off wheel) and escalates alerts while ACC maintains a safe gap until driver re-engages.
+The ego operates in dense traffic with collaboration features OFF; the human driver performs all merges and cut-in responses while the system logs performance for assistance competency evaluation.
+The ego operates in dense traffic with collaboration features ON; the system suggests gap selection and applies gentle longitudinal control while the driver confirms maneuvers, evaluating shared-control quality.
+The ego travels at 120 km/h when a vehicle cuts in ahead at 70 km/h with a short 0.5 s headway; the safety-backup layer intervenes to increase spacing if primary ACC response is insufficient.
+The ego moves at 50 km/h when a 10 km/h vehicle dives in with a −1.5 s (overtaking/overlap) headway error; the safety-backup executes immediate braking and warns the driver to prevent conflict.
+The ego follows at 70 km/h behind a 50 km/h lead that suddenly cuts out near an exit; the safety-backup ensures target reacquisition or reversion to set speed without acceleration surge.
+The ego follows at 90 km/h behind a 70 km/h lead that cuts out; the safety-backup suppresses premature throttle and validates forward path before resuming speed.
+The ego travels at 80 km/h when the driver becomes unresponsive; the safety-backup engages minimum-risk maneuver: maintain lane, decelerate to a controlled stop, and activate hazard lights.
+The ego drives with lane-keeping/steering assistance active at 100/120/80 km/h on well-marked roads; the system must center the lane through gentle curvature and minor cross-wind while respecting driver override (evaluate at each speed separately).

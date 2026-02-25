@@ -1,0 +1,1629 @@
+<?xml version='1.0' encoding='utf-8'?>
+<OpenSCENARIO>
+	<FileHeader revMajor="1" revMinor="0" date="2024-07-17T13:16:33.9Z" author="Verification and Validation Team, WMG" description="This file has been auto-generated :v1.4" />
+	<ParameterDeclarations>
+		<ParameterDeclaration name="Ego_init_speed" parameterType="double" value="25.0" />
+		<ParameterDeclaration name="Ego_init_heading" parameterType="double" value="0.0" />
+		<ParameterDeclaration name="Ego_init_tOffset" parameterType="double" value="0.0" />
+		<ParameterDeclaration name="Ego_init_sPosition" parameterType="double" value="10.0" />
+		<ParameterDeclaration name="N1_init_heading" parameterType="double" value="0.0" />
+		<ParameterDeclaration name="N1_init_tOffset" parameterType="double" value="0.0" />
+		<ParameterDeclaration name="N1_init_sPosition" parameterType="double" value="111.17" />
+		<ParameterDeclaration name="N1_init_speed" parameterType="double" value="19.44" />
+		<ParameterDeclaration name="N2_init_heading" parameterType="double" value="0.0" />
+		<ParameterDeclaration name="N2_init_tOffset" parameterType="double" value="0.0" />
+		<ParameterDeclaration name="N2_init_sPosition" parameterType="double" value="232.32" />
+		<ParameterDeclaration name="N2_init_speed" parameterType="double" value="0.0" />
+		<ParameterDeclaration name="N1_1_3_acceleration" parameterType="double" value="0.0" />
+		<ParameterDeclaration name="N1_1_3_speed" parameterType="double" value="19.44" />
+		<ParameterDeclaration name="N1_1_1_acceleration" parameterType="double" value="0.0" />
+		<ParameterDeclaration name="N2_1_2_speed" parameterType="double" value="0.0" />
+		<ParameterDeclaration name="environment_init_sun_elevation" parameterType="double" value="1.308996938995747" />
+		<ParameterDeclaration name="N1_1_1_speed" parameterType="double" value="19.44" />
+		<ParameterDeclaration name="N2_1_3_speed" parameterType="double" value="0.0" />
+		<ParameterDeclaration name="N1_1_2_acceleration" parameterType="double" value="0.0" />
+		<ParameterDeclaration name="environment_init_sun_azimuth" parameterType="double" value="1.5707963267948966" />
+		<ParameterDeclaration name="environment_init_sun_intensity" parameterType="double" value="17500.0" />
+		<ParameterDeclaration name="environment_init_wind_speed" parameterType="double" value="0.1" />
+		<ParameterDeclaration name="N2_1_1_acceleration" parameterType="double" value="0.0" />
+		<ParameterDeclaration name="N2_1_1_speed" parameterType="double" value="0.0" />
+		<ParameterDeclaration name="N2_1_3_acceleration" parameterType="double" value="0.0" />
+		<ParameterDeclaration name="N1_1_2_speed" parameterType="double" value="19.44" />
+		<ParameterDeclaration name="N2_1_2_acceleration" parameterType="double" value="0.0" />
+	</ParameterDeclarations>
+
+	<CatalogLocations />
+
+	<RoadNetwork>
+		<LogicFile filepath="ACC.xodr" />
+	</RoadNetwork>
+
+	<Entities>
+		<ScenarioObject name="N1">
+			<Vehicle name="N1" vehicleCategory="car">
+				<ParameterDeclarations />
+				<BoundingBox>
+					<Center x="1.4" y="0.0" z="0.8" />
+					<Dimensions width="2.0" length="4.2" height="1.6" />
+				</BoundingBox>
+				<Performance maxSpeed="69.444" maxDeceleration="10.0" maxAcceleration="200" />
+				<Axles>
+					<FrontAxle positionZ="0.25" trackWidth="1.75" positionX="2.8" maxSteering="0.5" wheelDiameter="0.5" />
+					<RearAxle positionZ="0.25" trackWidth="1.75" positionX="0.0" maxSteering="0.0" wheelDiameter="0.5" />
+				</Axles>
+				<Properties />
+			</Vehicle>
+			<ObjectController />
+		</ScenarioObject>
+		<ScenarioObject name="N2">
+			<Vehicle name="N2" vehicleCategory="car">
+				<ParameterDeclarations />
+				<BoundingBox>
+					<Center x="1.4" y="0.0" z="0.8" />
+					<Dimensions width="2.0" length="4.2" height="1.6" />
+				</BoundingBox>
+				<Performance maxSpeed="69.444" maxDeceleration="10.0" maxAcceleration="200" />
+				<Axles>
+					<FrontAxle positionZ="0.25" trackWidth="1.75" positionX="2.8" maxSteering="0.5" wheelDiameter="0.5" />
+					<RearAxle positionZ="0.25" trackWidth="1.75" positionX="0.0" maxSteering="0.0" wheelDiameter="0.5" />
+				</Axles>
+				<Properties />
+			</Vehicle>
+			<ObjectController />
+		</ScenarioObject>
+		<ScenarioObject name="Ego">
+			<Vehicle name="Ego" vehicleCategory="car">
+				<ParameterDeclarations />
+				<BoundingBox>
+					<Center x="1.4" y="0.0" z="0.8" />
+					<Dimensions width="2.0" length="4.2" height="1.6" />
+				</BoundingBox>
+				<Performance maxSpeed="69.444" maxDeceleration="10.0" maxAcceleration="200" />
+				<Axles>
+					<FrontAxle positionZ="0.25" trackWidth="1.75" positionX="2.8" maxSteering="0.5" wheelDiameter="0.5" />
+					<RearAxle positionZ="0.25" trackWidth="1.75" positionX="0.0" maxSteering="0.0" wheelDiameter="0.5" />
+				</Axles>
+				<Properties />
+			</Vehicle>
+			<ObjectController />
+		</ScenarioObject>
+	</Entities>
+	
+	<Storyboard>
+		<Init>
+			<Actions>
+				<GlobalAction>
+					<EnvironmentAction>
+						<Environment name="Env1">
+							<TimeOfDay animation="true" dateTime="2024-07-17T09:00:33.981+01:00" />
+							<Weather cloudState="cloudy">
+								<Sun intensity="$environment_init_sun_intensity" azimuth="$environment_init_sun_azimuth" elevation="$environment_init_sun_elevation" />
+								<Precipitation precipitationType="dry" intensity="0.0" />
+								<Fog visualRange="100000.0" /></Weather>
+						<RoadCondition frictionScaleFactor="1.0" /></Environment>
+					</EnvironmentAction>
+				</GlobalAction>
+				<Private entityRef="Ego">
+					<PrivateAction>
+						<TeleportAction>
+				 			<Position>
+								<LanePosition roadId="1" laneId="-1" s="$Ego_init_sPosition" offset="$Ego_init_tOffset">
+									<Orientation h="$Ego_init_heading" type="relative" />
+								</LanePosition>
+							</Position>
+						</TeleportAction>
+					</PrivateAction>
+				 	<PrivateAction>
+				 			<LongitudinalAction>
+				 				<SpeedAction>
+				 					<SpeedActionDynamics dynamicsShape="step" value="0" dynamicsDimension="time" />
+				 					<SpeedActionTarget>
+				 						<AbsoluteTargetSpeed value="$Ego_init_speed" />
+				 					</SpeedActionTarget>
+				 				</SpeedAction>
+				 			</LongitudinalAction>
+				 		</PrivateAction>
+				</Private>
+				<Private entityRef="N1">
+					<PrivateAction>
+						<TeleportAction>
+				 			<Position>
+								<LanePosition roadId="1" laneId="-1" s="$N1_init_sPosition" offset="$N1_init_tOffset">
+									<Orientation h="$N1_init_heading" type="relative" />
+								</LanePosition>
+							</Position>
+						</TeleportAction>
+					</PrivateAction>
+				 	<PrivateAction>
+				 			<LongitudinalAction>
+				 				<SpeedAction>
+				 					<SpeedActionDynamics dynamicsShape="step" value="0" dynamicsDimension="time" />
+				 					<SpeedActionTarget>
+				 						<AbsoluteTargetSpeed value="$N1_init_speed" />
+				 					</SpeedActionTarget>
+				 				</SpeedAction>
+				 			</LongitudinalAction>
+				 		</PrivateAction>
+				</Private>
+				<Private entityRef="N2">
+					<PrivateAction>
+						<TeleportAction>
+				 			<Position>
+								<LanePosition roadId="1" laneId="-1" s="$N2_init_sPosition" offset="$N2_init_tOffset">
+									<Orientation h="$N2_init_heading" type="relative" />
+								</LanePosition>
+							</Position>
+						</TeleportAction>
+					</PrivateAction>
+				 	<PrivateAction>
+				 			<LongitudinalAction>
+				 				<SpeedAction>
+				 					<SpeedActionDynamics dynamicsShape="step" value="0" dynamicsDimension="time" />
+				 					<SpeedActionTarget>
+				 						<AbsoluteTargetSpeed value="$N2_init_speed" />
+				 					</SpeedActionTarget>
+				 				</SpeedAction>
+				 			</LongitudinalAction>
+				 		</PrivateAction>
+				</Private>
+			</Actions>
+		</Init>
+		<Story name="SSMS1">
+			<Act name="SSMS1.ACT.Phase1.Agent.N1">
+				<ManeuverGroup maximumExecutionCount="1" name="Phase1.Actor.N1">
+					<Actors selectTriggeringEntities="false">
+						<EntityRef entityRef="N1" />
+					</Actors>
+					<Maneuver name="S1.AN1.P1">
+						<ParameterDeclarations />
+						<Event maximumExecutionCount="1" priority="parallel" name="S1.AN1.P1.Drive_Away">
+							<Action name="SSMS1.ACTION.Phase1.Agent.N1.Drive"> 
+								<PrivateAction>
+									<LongitudinalAction>
+										<SpeedAction>
+											<SpeedActionDynamics dynamicsShape="sinusoidal" value="4.6" dynamicsDimension="time" />
+											<SpeedActionTarget>
+												<AbsoluteTargetSpeed value="$N1_1_1_speed" />
+											</SpeedActionTarget>
+										</SpeedAction>
+									</LongitudinalAction>
+								</PrivateAction>
+							</Action>
+							<StartTrigger>
+								<ConditionGroup>
+									<Condition name="TrivialCondition.0" delay="0" conditionEdge="none">
+										<ByValueCondition>
+											<SimulationTimeCondition value="0" rule="greaterThan" />
+										</ByValueCondition>
+									</Condition>
+								</ConditionGroup>
+							</StartTrigger>
+						</Event>
+					</Maneuver>
+				</ManeuverGroup>
+				<StartTrigger>
+					<ConditionGroup>
+						<Condition name="TrivialCondition.1" delay="0" conditionEdge="none">
+							<ByValueCondition>
+								<SimulationTimeCondition value="0" rule="greaterThan" />
+							</ByValueCondition>
+						</Condition>
+					</ConditionGroup>
+				</StartTrigger>
+				<StopTrigger>
+					<ConditionGroup>
+					<Condition name="SC1.2" delay="0" conditionEdge="none">
+						<ByEntityCondition>
+							<TriggeringEntities triggeringEntitiesRule="any">
+								<EntityRef entityRef="N2" />
+							</TriggeringEntities>
+							<EntityCondition>
+								<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+							</EntityCondition>
+						</ByEntityCondition>
+					</Condition>
+					</ConditionGroup>
+				</StopTrigger>
+			</Act>
+			<Act name="SSMS1.ACT.Phase1.Agent.N2">
+				<ManeuverGroup maximumExecutionCount="1" name="Phase1.Actor.N2">
+					<Actors selectTriggeringEntities="false">
+						<EntityRef entityRef="N2" />
+					</Actors>
+					<Maneuver name="S1.AN2.P1">
+						<ParameterDeclarations />
+						<Event maximumExecutionCount="1" priority="parallel" name="S1.AN2.P1.Stopped">
+							<Action name="SSMS1.ACTION.Phase1.Agent.N2.Drive"> 
+								<PrivateAction>
+									<LongitudinalAction>
+										<SpeedAction>
+											<SpeedActionDynamics dynamicsShape="sinusoidal" value="4.6" dynamicsDimension="time" />
+											<SpeedActionTarget>
+												<AbsoluteTargetSpeed value="$N2_1_1_speed" />
+											</SpeedActionTarget>
+										</SpeedAction>
+									</LongitudinalAction>
+								</PrivateAction>
+							</Action>
+							<StartTrigger>
+								<ConditionGroup>
+									<Condition name="TrivialCondition.3" delay="0" conditionEdge="none">
+										<ByValueCondition>
+											<SimulationTimeCondition value="0" rule="greaterThan" />
+										</ByValueCondition>
+									</Condition>
+								</ConditionGroup>
+							</StartTrigger>
+						</Event>
+					</Maneuver>
+				</ManeuverGroup>
+				<StartTrigger>
+					<ConditionGroup>
+						<Condition name="TrivialCondition.4" delay="0" conditionEdge="none">
+							<ByValueCondition>
+								<SimulationTimeCondition value="0" rule="greaterThan" />
+							</ByValueCondition>
+						</Condition>
+					</ConditionGroup>
+				</StartTrigger>
+				<StopTrigger>
+					<ConditionGroup>
+					<Condition name="SC2.5" delay="0" conditionEdge="none">
+						<ByEntityCondition>
+							<TriggeringEntities triggeringEntitiesRule="any">
+								<EntityRef entityRef="N2" />
+							</TriggeringEntities>
+							<EntityCondition>
+								<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+							</EntityCondition>
+						</ByEntityCondition>
+					</Condition>
+					</ConditionGroup>
+				</StopTrigger>
+			</Act>
+			<Act name="SSMS1.ACT.Phase2.Agent.N1">
+				<ManeuverGroup maximumExecutionCount="1" name="Phase2.Actor.N1">
+					<Actors selectTriggeringEntities="false">
+						<EntityRef entityRef="N1" />
+					</Actors>
+					<Maneuver name="S1.AN1.P2">
+						<ParameterDeclarations />
+						<Event maximumExecutionCount="1" priority="parallel" name="S1.AN1.P2.LaneChangeRight_CutOut">
+							<Action name="SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight">
+								<PrivateAction>
+									<LateralAction>
+										<LaneChangeAction>
+											<LaneChangeActionDynamics dynamicsShape="sinusoidal" value="4.6" dynamicsDimension="time" />
+											<LaneChangeTarget>
+												<RelativeTargetLane entityRef="N1" value="-1" />
+											</LaneChangeTarget>
+										</LaneChangeAction>
+									</LateralAction>
+								</PrivateAction>
+							</Action>
+							<Action name="SSMS1.ACTION.Phase2.Agent.N1.Drive">
+								<PrivateAction>
+									<LongitudinalAction>
+										<SpeedAction>
+											<SpeedActionDynamics dynamicsShape="sinusoidal" value="4.6" dynamicsDimension="time" />
+											<SpeedActionTarget>
+												<AbsoluteTargetSpeed value="$N1_1_2_speed" />
+											</SpeedActionTarget>
+										</SpeedAction>
+									</LongitudinalAction>
+								</PrivateAction>
+							</Action>
+							<StartTrigger>
+								<ConditionGroup>
+									<Condition name="TrivialCondition.6" delay="0" conditionEdge="none">
+										<ByValueCondition>
+											<SimulationTimeCondition value="0" rule="greaterThan" />
+										</ByValueCondition>
+									</Condition>
+								</ConditionGroup>
+							</StartTrigger>
+						</Event>
+					</Maneuver>
+				</ManeuverGroup>
+				<StartTrigger>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N1.stopTransition.9" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N1" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N2.stopTransition.10" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N2" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC3.7" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N1.endTransition.11" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N1" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N2.endTransition.12" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N2" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC3.7" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N1.completeState.13" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N1" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N2.completeState.14" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N2" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC3.7" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N1.Drive.stopTransition.15" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N1.Drive" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N2.Drive.stopTransition.16" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N2.Drive" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC3.7" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N1.Drive.endTransition.17" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N1.Drive" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N2.Drive.endTransition.18" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N2.Drive" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC3.7" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N1.Drive.completeState.19" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N1.Drive" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N2.Drive.completeState.20" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N2.Drive" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC3.7" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N1.stopTransition.21" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N1" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N2.stopTransition.22" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N2" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC4.8" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N1.endTransition.23" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N1" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N2.endTransition.24" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N2" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC4.8" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N1.completeState.25" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N1" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N2.completeState.26" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N2" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC4.8" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N1.Drive.stopTransition.27" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N1.Drive" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N2.Drive.stopTransition.28" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N2.Drive" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC4.8" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N1.Drive.endTransition.29" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N1.Drive" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N2.Drive.endTransition.30" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N2.Drive" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC4.8" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N1.Drive.completeState.31" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N1.Drive" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N2.Drive.completeState.32" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N2.Drive" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC4.8" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+				</StartTrigger>
+				<StopTrigger>
+					<ConditionGroup>
+					<Condition name="SC5.33" delay="0" conditionEdge="none">
+						<ByEntityCondition>
+							<TriggeringEntities triggeringEntitiesRule="any">
+								<EntityRef entityRef="N1" />
+							</TriggeringEntities>
+							<EntityCondition>
+								<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+							</EntityCondition>
+						</ByEntityCondition>
+					</Condition>
+					</ConditionGroup>
+				</StopTrigger>
+			</Act>
+			<Act name="SSMS1.ACT.Phase2.Agent.N2">
+				<ManeuverGroup maximumExecutionCount="1" name="Phase2.Actor.N2">
+					<Actors selectTriggeringEntities="false">
+						<EntityRef entityRef="N2" />
+					</Actors>
+					<Maneuver name="S1.AN2.P2">
+						<ParameterDeclarations />
+						<Event maximumExecutionCount="1" priority="parallel" name="S1.AN2.P2.Stopped">
+							<Action name="SSMS1.ACTION.Phase2.Agent.N2.Drive"> 
+								<PrivateAction>
+									<LongitudinalAction>
+										<SpeedAction>
+											<SpeedActionDynamics dynamicsShape="sinusoidal" value="4.6" dynamicsDimension="time" />
+											<SpeedActionTarget>
+												<AbsoluteTargetSpeed value="$N2_1_2_speed" />
+											</SpeedActionTarget>
+										</SpeedAction>
+									</LongitudinalAction>
+								</PrivateAction>
+							</Action>
+							<StartTrigger>
+								<ConditionGroup>
+									<Condition name="TrivialCondition.34" delay="0" conditionEdge="none">
+										<ByValueCondition>
+											<SimulationTimeCondition value="0" rule="greaterThan" />
+										</ByValueCondition>
+									</Condition>
+								</ConditionGroup>
+							</StartTrigger>
+						</Event>
+					</Maneuver>
+				</ManeuverGroup>
+				<StartTrigger>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N1.stopTransition.37" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N1" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N2.stopTransition.38" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N2" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC6.35" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N1.endTransition.39" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N1" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N2.endTransition.40" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N2" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC6.35" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N1.completeState.41" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N1" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N2.completeState.42" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N2" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC6.35" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N1.Drive.stopTransition.43" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N1.Drive" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N2.Drive.stopTransition.44" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N2.Drive" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC6.35" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N1.Drive.endTransition.45" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N1.Drive" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N2.Drive.endTransition.46" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N2.Drive" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC6.35" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N1.Drive.completeState.47" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N1.Drive" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N2.Drive.completeState.48" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N2.Drive" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC6.35" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N1.stopTransition.49" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N1" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N2.stopTransition.50" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N2" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC7.36" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N1.endTransition.51" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N1" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N2.endTransition.52" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N2" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC7.36" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N1.completeState.53" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N1" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase1.Agent.N2.completeState.54" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase1.Agent.N2" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC7.36" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N1.Drive.stopTransition.55" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N1.Drive" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N2.Drive.stopTransition.56" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N2.Drive" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC7.36" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N1.Drive.endTransition.57" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N1.Drive" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N2.Drive.endTransition.58" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N2.Drive" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC7.36" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N1.Drive.completeState.59" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N1.Drive" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase1.Agent.N2.Drive.completeState.60" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase1.Agent.N2.Drive" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC7.36" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N2" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="N1" relativeDistanceType="longitudinal" rule="lessThan" value="58.32" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+				</StartTrigger>
+				<StopTrigger>
+					<ConditionGroup>
+					<Condition name="SC8.61" delay="0" conditionEdge="none">
+						<ByEntityCondition>
+							<TriggeringEntities triggeringEntitiesRule="any">
+								<EntityRef entityRef="N1" />
+							</TriggeringEntities>
+							<EntityCondition>
+								<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+							</EntityCondition>
+						</ByEntityCondition>
+					</Condition>
+					</ConditionGroup>
+				</StopTrigger>
+			</Act>
+			<Act name="SSMS1.ACT.Phase3.Agent.N1">
+				<ManeuverGroup maximumExecutionCount="1" name="Phase3.Actor.N1">
+					<Actors selectTriggeringEntities="false">
+						<EntityRef entityRef="N1" />
+					</Actors>
+					<Maneuver name="S1.AN1.P3">
+						<ParameterDeclarations />
+						<Event maximumExecutionCount="1" priority="parallel" name="S1.AN1.P3.Drive_Away">
+							<Action name="SSMS1.ACTION.Phase3.Agent.N1.Drive"> 
+								<PrivateAction>
+									<LongitudinalAction>
+										<SpeedAction>
+											<SpeedActionDynamics dynamicsShape="sinusoidal" value="4.6" dynamicsDimension="time" />
+											<SpeedActionTarget>
+												<AbsoluteTargetSpeed value="$N1_1_3_speed" />
+											</SpeedActionTarget>
+										</SpeedAction>
+									</LongitudinalAction>
+								</PrivateAction>
+							</Action>
+							<StartTrigger>
+								<ConditionGroup>
+									<Condition name="TrivialCondition.62" delay="0" conditionEdge="none">
+										<ByValueCondition>
+											<SimulationTimeCondition value="0" rule="greaterThan" />
+										</ByValueCondition>
+									</Condition>
+								</ConditionGroup>
+							</StartTrigger>
+						</Event>
+					</Maneuver>
+				</ManeuverGroup>
+				<StartTrigger>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N1.stopTransition.65" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N1" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N2.stopTransition.66" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N2" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC9.63" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N1.endTransition.67" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N1" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N2.endTransition.68" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N2" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC9.63" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N1.completeState.69" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N1" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N2.completeState.70" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N2" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC9.63" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.Drive.stopTransition.71" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.Drive" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight.stopTransition.72" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N2.Drive.stopTransition.73" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N2.Drive" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC9.63" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.Drive.endTransition.74" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.Drive" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight.endTransition.75" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N2.Drive.endTransition.76" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N2.Drive" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC9.63" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.Drive.completeState.77" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.Drive" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight.completeState.78" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N2.Drive.completeState.79" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N2.Drive" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC9.63" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N1.stopTransition.80" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N1" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N2.stopTransition.81" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N2" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC10.64" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N1.endTransition.82" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N1" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N2.endTransition.83" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N2" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC10.64" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N1.completeState.84" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N1" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N2.completeState.85" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N2" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC10.64" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.Drive.stopTransition.86" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.Drive" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight.stopTransition.87" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N2.Drive.stopTransition.88" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N2.Drive" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC10.64" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.Drive.endTransition.89" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.Drive" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight.endTransition.90" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N2.Drive.endTransition.91" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N2.Drive" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC10.64" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.Drive.completeState.92" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.Drive" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight.completeState.93" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N2.Drive.completeState.94" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N2.Drive" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC10.64" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+				</StartTrigger>
+				<StopTrigger>
+					<ConditionGroup>
+					<Condition name="SC11.95" delay="0" conditionEdge="none">
+						<ByEntityCondition>
+							<TriggeringEntities triggeringEntitiesRule="any">
+								<EntityRef entityRef="N1" />
+							</TriggeringEntities>
+							<EntityCondition>
+								<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+							</EntityCondition>
+						</ByEntityCondition>
+					</Condition>
+					</ConditionGroup>
+				</StopTrigger>
+			</Act>
+			<Act name="SSMS1.ACT.Phase3.Agent.N2">
+				<ManeuverGroup maximumExecutionCount="1" name="Phase3.Actor.N2">
+					<Actors selectTriggeringEntities="false">
+						<EntityRef entityRef="N2" />
+					</Actors>
+					<Maneuver name="S1.AN2.P3">
+						<ParameterDeclarations />
+						<Event maximumExecutionCount="1" priority="parallel" name="S1.AN2.P3.Stopped">
+							<Action name="SSMS1.ACTION.Phase3.Agent.N2.Drive"> 
+								<PrivateAction>
+									<LongitudinalAction>
+										<SpeedAction>
+											<SpeedActionDynamics dynamicsShape="sinusoidal" value="4.6" dynamicsDimension="time" />
+											<SpeedActionTarget>
+												<AbsoluteTargetSpeed value="$N2_1_3_speed" />
+											</SpeedActionTarget>
+										</SpeedAction>
+									</LongitudinalAction>
+								</PrivateAction>
+							</Action>
+							<StartTrigger>
+								<ConditionGroup>
+									<Condition name="TrivialCondition.96" delay="0" conditionEdge="none">
+										<ByValueCondition>
+											<SimulationTimeCondition value="0" rule="greaterThan" />
+										</ByValueCondition>
+									</Condition>
+								</ConditionGroup>
+							</StartTrigger>
+						</Event>
+					</Maneuver>
+				</ManeuverGroup>
+				<StartTrigger>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N1.stopTransition.99" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N1" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N2.stopTransition.100" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N2" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC12.97" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N1.endTransition.101" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N1" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N2.endTransition.102" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N2" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC12.97" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N1.completeState.103" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N1" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N2.completeState.104" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N2" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC12.97" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.Drive.stopTransition.105" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.Drive" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight.stopTransition.106" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N2.Drive.stopTransition.107" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N2.Drive" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC12.97" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.Drive.endTransition.108" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.Drive" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight.endTransition.109" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N2.Drive.endTransition.110" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N2.Drive" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC12.97" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.Drive.completeState.111" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.Drive" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight.completeState.112" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N2.Drive.completeState.113" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N2.Drive" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC12.97" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N1.stopTransition.114" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N1" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N2.stopTransition.115" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N2" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC13.98" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N1.endTransition.116" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N1" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N2.endTransition.117" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N2" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC13.98" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N1.completeState.118" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N1" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="act.SSMS1.ACT.Phase2.Agent.N2.completeState.119" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="act" storyboardElementRef="SSMS1.ACT.Phase2.Agent.N2" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC13.98" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.Drive.stopTransition.120" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.Drive" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight.stopTransition.121" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N2.Drive.stopTransition.122" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N2.Drive" state="stopTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC13.98" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.Drive.endTransition.123" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.Drive" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight.endTransition.124" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N2.Drive.endTransition.125" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N2.Drive" state="endTransition" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC13.98" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+					<ConditionGroup>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.Drive.completeState.126" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.Drive" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight.completeState.127" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N1.LaneChangeRight" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="action.SSMS1.ACTION.Phase2.Agent.N2.Drive.completeState.128" delay="0.0" conditionEdge="none">
+							<ByValueCondition>
+								<StoryboardElementStateCondition storyboardElementType="action" storyboardElementRef="SSMS1.ACTION.Phase2.Agent.N2.Drive" state="completeState" />
+							</ByValueCondition>
+						</Condition>
+						<Condition name="SC13.98" delay="0" conditionEdge="none">
+							<ByEntityCondition>
+								<TriggeringEntities triggeringEntitiesRule="any">
+									<EntityRef entityRef="N1" />
+								</TriggeringEntities>
+								<EntityCondition>
+									<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+								</EntityCondition>
+							</ByEntityCondition>
+						</Condition>
+					</ConditionGroup>
+				</StartTrigger>
+				<StopTrigger>
+					<ConditionGroup>
+					<Condition name="SC14.129" delay="0" conditionEdge="none">
+						<ByEntityCondition>
+							<TriggeringEntities triggeringEntitiesRule="any">
+								<EntityRef entityRef="N1" />
+							</TriggeringEntities>
+							<EntityCondition>
+								<RelativeDistanceCondition entityRef="Ego" relativeDistanceType="longitudinal" rule="lessThan" value="0" freespace="true" />
+							</EntityCondition>
+						</ByEntityCondition>
+					</Condition>
+					</ConditionGroup>
+				</StopTrigger>
+			</Act>
+		</Story>
+		<StopTrigger>
+			<ConditionGroup>
+			<Condition name="CollisionCondition.130" delay="0" conditionEdge="none">
+				<ByEntityCondition>
+					<TriggeringEntities triggeringEntitiesRule="any">
+						<EntityRef entityRef="Ego" />
+						<EntityRef entityRef="N1" />
+						<EntityRef entityRef="N2" />
+					</TriggeringEntities>
+					<EntityCondition>
+						<CollisionCondition>
+							<ByType type="vehicle" />
+						</CollisionCondition>
+					</EntityCondition>
+				</ByEntityCondition>
+			</Condition>
+			</ConditionGroup>
+		</StopTrigger>
+	</Storyboard>
+	
+</OpenSCENARIO>

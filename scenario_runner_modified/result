@@ -1,0 +1,78 @@
+# tag::library-physical-time[]
+type time is SI(s: 1)
+unit s           of time is SI(s: 1, factor: 1)
+unit hour        of time is SI(s: 1, factor: 3600)
+unit h           of time is SI(s: 1, factor: 3600)
+unit minute      of time is SI(s: 1, factor: 60)
+unit min         of time is SI(s: 1, factor: 60)
+# end::library-physical-time[]
+
+# tag::library-physical-length[]
+type length is SI(m: 1)
+unit m          of length is SI(m: 1, factor: 1)
+unit meter      of length is SI(m: 1, factor: 1)
+unit km         of length is SI(m: 1, factor: 1000)
+# end::library-physical-length[]
+
+# tag::library-physical-velocity[]
+type velocity is SI(m: 1, s: -1)
+unit meter_per_second    of velocity is SI(m: 1, s: -1, factor: 1)
+unit mps                 of velocity is SI(m: 1, s: -1, factor: 1)
+unit kilometer_per_hour  of velocity is SI(m: 1, s: -1, factor: 0.277777778)
+unit kmph                of velocity is SI(m: 1, s: -1, factor: 0.277777778)
+unit kph                 of velocity is SI(m: 1, s: -1, factor: 0.277777778)
+unit mile_per_hour       of velocity is SI(m: 1, s: -1, factor: 0.447038889)
+unit mph                 of velocity is SI(m: 1, s: -1, factor: 0.447038889)
+unit miph                of velocity is SI(m: 1, s: -1, factor: 0.447038889)
+unit mmph                of velocity is SI(m: 1, s: -1, factor: 0.000000278)
+unit millimeter_per_hour of velocity is SI(m: 1, s: -1, factor: 0.000000278)
+# end::library-physical-velocity[]
+
+actor dut
+actor Path
+modifier Path.set_map
+modifier Path.path_min_driving_lanes
+actor Model3
+actor Rubicon
+#import basic.osc
+
+global path: Path
+global my_map: string = "Town04"
+global min_lane: int = 2
+
+scenario dut.cut_in_and_slow:
+    
+    ego_vehicle: Model3
+    npc: Rubicon
+    event start
+    event end
+
+    do serial:
+        get_ahead: parallel(duration: [30s..31s]):
+            ego_vehicle.drive(path) with: 
+                speed([30kph..31kph])
+                lane(2, at: start) # left to right: [1..n]
+            npc.drive(path, adjust: true) with:
+                lane(left_of: ego_vehicle, at: start)
+                position([15m..20m], behind: ego_vehicle, at: start)
+                position([20m..21m], ahead_of: ego_vehicle, at: end)
+
+        change_lane: parallel(duration: [5s..6s]):
+            ego_vehicle.drive(path)
+            npc.drive(path) with:
+                lane(same_as: ego_vehicle, at: end)
+
+        slow: parallel(duration: [20s..21s]):
+            ego_vehicle.drive(path)
+            npc.drive(path) with:
+                speed([10kph..12kph])
+
+scenario top:
+    path.set_map(my_map)      
+    path.path_min_driving_lanes(min_lane)
+    ego_vehicle: Model3
+    npc: Rubicon
+
+    do serial:
+        dut.cut_in_and_slow()
+

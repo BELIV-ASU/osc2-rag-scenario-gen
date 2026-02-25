@@ -1,0 +1,18 @@
+import basic.osc
+
+scenario top:
+
+    Town: string = "Town04"
+
+    ego: EgoVehicle
+    npc: OtherVehicle
+
+    do serial:
+        drive_phase:
+            do parallel(duration: 10s):
+                npc.drive() with:
+                    lane(right_of: ego, at: start)
+                    position(5m, behind: ego, at: start)
+                    position(10m, ahead_of: ego, at: end)
+        wait_phase:
+            wait(5s)

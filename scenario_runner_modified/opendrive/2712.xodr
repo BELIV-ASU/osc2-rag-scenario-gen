@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<OpenDRIVE>
+<header revMajor="1" revMinor="6" version="1.6"/>
+<road id="1" junction="-1" length="42.34" name="R1" rule="RHT">
+	<link>
+		<successor elementType="junction" elementId="1000" />
+	</link>
+	<type s="0.0" type="town">
+		<speed max="15.6464"/>
+	</type>
+	<planView>
+	  <geometry hdg="0.0" length="42.34" s="0.0" x="0.0" y="0.0">
+	  	<line/>
+	  </geometry>
+	</planView>
+	<lanes>
+		<laneSection s="0.0">
+			<left>
+				<lane id="1" level="true" type="driving">
+					<width a="3.5" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<roadMark color="standard" sOffset="0.0" type="solid"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</left>
+			<center>
+				<lane id="0" level="true" type="driving">
+					<width a="0.0" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<roadMark color="standard" sOffset="0.0" type="broken"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</center>
+			<right>
+				<lane id="-1" level="true" type="driving">
+					<width a="3.5" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<roadMark color="standard" sOffset="0.0" type="solid"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</right>
+		</laneSection>
+	</lanes>
+</road>
+<road id="2" junction="-1" length="200.0" name="R2" rule="RHT">
+	<link>
+		<predecessor elementType="junction" elementId="1000" />
+	</link>
+	<type s="0.0" type="town">
+		<speed max="15.6464"/>
+	</type>
+	<planView>
+	  <geometry hdg="1.5707963267948966" length="200.0" s="0.0" x="53.84" y="11.5">
+	  	<line/>
+	  </geometry>
+	</planView>
+	<lanes>
+		<laneSection s="0.0">
+			<left>
+				<lane id="1" level="true" type="driving">
+					<width a="3.5" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<roadMark color="standard" sOffset="0.0" type="solid"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</left>
+			<center>
+				<lane id="0" level="true" type="driving">
+					<width a="0.0" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<roadMark color="standard" sOffset="0.0" type="broken"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</center>
+			<right>
+				<lane id="-1" level="true" type="driving">
+					<width a="3.5" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<roadMark color="standard" sOffset="0.0" type="solid"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</right>
+		</laneSection>
+	</lanes>
+</road>
+<road id="3" junction="-1" length="1000.0" name="R3" rule="RHT">
+	<link>
+		<predecessor elementType="junction" elementId="1000" />
+	</link>
+	<type s="0.0" type="town">
+		<speed max="15.6464"/>
+	</type>
+	<planView>
+	  <geometry hdg="0.0" length="1000.0" s="0.0" x="65.34" y="-1.4083438190194562E-15">
+	  	<line/>
+	  </geometry>
+	</planView>
+	<lanes>
+		<laneSection s="0.0">
+			<left>
+				<lane id="1" level="true" type="driving">
+					<width a="3.5" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<roadMark color="standard" sOffset="0.0" type="solid"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</left>
+			<center>
+				<lane id="0" level="true" type="driving">
+					<width a="0.0" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<roadMark color="standard" sOffset="0.0" type="broken"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</center>
+			<right>
+				<lane id="-1" level="true" type="driving">
+					<width a="3.5" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<roadMark color="standard" sOffset="0.0" type="solid"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</right>
+		</laneSection>
+	</lanes>
+</road>
+<road id="4" junction="-1" length="45.84" name="R4" rule="RHT">
+	<link>
+		<predecessor elementType="junction" elementId="1000" />
+	</link>
+	<type s="0.0" type="town">
+		<speed max="15.6464"/>
+	</type>
+	<planView>
+	  <geometry hdg="4.71238898038469" length="45.84" s="0.0" x="53.84" y="-11.5">
+	  	<line/>
+	  </geometry>
+	</planView>
+	<lanes>
+		<laneSection s="0.0">
+			<left>
+				<lane id="1" level="true" type="driving">
+					<width a="3.5" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<roadMark color="standard" sOffset="0.0" type="solid"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</left>
+			<center>
+				<lane id="0" level="true" type="driving">
+					<width a="0.0" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<roadMark color="standard" sOffset="0.0" type="broken"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</center>
+			<right>
+				<lane id="-1" level="true" type="driving">
+					<width a="3.5" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<roadMark color="standard" sOffset="0.0" type="solid"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</right>
+		</laneSection>
+	</lanes>
+</road>
+<road id="5" junction="1000" length="23.0" name="ConnectingRoad5" rule="RHT">
+	<link>
+		<predecessor elementType="road" elementId="1" contactPoint="end"/>
+		<successor elementType="road" elementId="3" contactPoint="start"/>
+	</link>
+	<type s="0.0" type="unknown"/>
+	<planView>
+	  <geometry hdg="0.0" length="23.0" s="0.0" x="42.34" y="0.0">
+	  	<line/>
+	  </geometry>
+	</planView>
+	<lanes>
+		<laneSection s="0.0">
+			<center>
+				<lane id="0" level="true" type="driving">
+					<width a="0.0" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</center>
+			<right>
+				<lane id="-1" level="true" type="driving">
+					<link>
+						<predecessor id="-1"/>
+						<successor id ="-1"/>
+					</link>
+					<width a="3.5" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</right>
+		</laneSection>
+	</lanes>
+</road>
+<road id="6" junction="1000" length="23.0" name="ConnectingRoad6" rule="RHT">
+	<link>
+		<predecessor elementType="road" elementId="2" contactPoint="start"/>
+		<successor elementType="road" elementId="4" contactPoint="start"/>
+	</link>
+	<type s="0.0" type="unknown"/>
+	<planView>
+	  <geometry hdg="4.71238898038469" length="23.0" s="0.0" x="53.84" y="11.5">
+	  	<line/>
+	  </geometry>
+	</planView>
+	<lanes>
+		<laneSection s="0.0">
+			<center>
+				<lane id="0" level="true" type="driving">
+					<width a="0.0" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</center>
+			<right>
+				<lane id="-1" level="true" type="driving">
+					<link>
+						<predecessor id="1"/>
+						<successor id ="-1"/>
+					</link>
+					<width a="3.5" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</right>
+		</laneSection>
+	</lanes>
+</road>
+<road id="7" junction="1000" length="23.0" name="ConnectingRoad7" rule="RHT">
+	<link>
+		<predecessor elementType="road" elementId="3" contactPoint="start"/>
+		<successor elementType="road" elementId="1" contactPoint="end"/>
+	</link>
+	<type s="0.0" type="unknown"/>
+	<planView>
+	  <geometry hdg="3.141592653589793" length="23.0" s="0.0" x="65.34" y="-1.4083438190194562E-15">
+	  	<line/>
+	  </geometry>
+	</planView>
+	<lanes>
+		<laneSection s="0.0">
+			<center>
+				<lane id="0" level="true" type="driving">
+					<width a="0.0" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</center>
+			<right>
+				<lane id="-1" level="true" type="driving">
+					<link>
+						<predecessor id="1"/>
+						<successor id ="1"/>
+					</link>
+					<width a="3.5" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</right>
+		</laneSection>
+	</lanes>
+</road>
+<road id="8" junction="1000" length="23.0" name="ConnectingRoad8" rule="RHT">
+	<link>
+		<predecessor elementType="road" elementId="4" contactPoint="start"/>
+		<successor elementType="road" elementId="2" contactPoint="start"/>
+	</link>
+	<type s="0.0" type="unknown"/>
+	<planView>
+	  <geometry hdg="1.5707963267948966" length="23.0" s="0.0" x="53.84" y="-11.5">
+	  	<line/>
+	  </geometry>
+	</planView>
+	<lanes>
+		<laneSection s="0.0">
+			<center>
+				<lane id="0" level="true" type="driving">
+					<width a="0.0" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</center>
+			<right>
+				<lane id="-1" level="true" type="driving">
+					<link>
+						<predecessor id="1"/>
+						<successor id ="-1"/>
+					</link>
+					<width a="3.5" b="0.0" c="0.0" d="0.0" sOffset="0.0"/>
+					<material friction="0" sOffset="0.0"/>
+				</lane>
+			</right>
+		</laneSection>
+	</lanes>
+</road>
+<junction id="1000" name="J1">
+	<connection connectingRoad="5" contactPoint="start" id="100" incomingRoad="1">
+		<laneLink from="-1" to="-1"/>
+	</connection>
+	<connection connectingRoad="6" contactPoint="start" id="101" incomingRoad="2">
+		<laneLink from="1" to="-1"/>
+	</connection>
+	<connection connectingRoad="7" contactPoint="start" id="102" incomingRoad="3">
+		<laneLink from="1" to="-1"/>
+	</connection>
+	<connection connectingRoad="8" contactPoint="start" id="103" incomingRoad="4">
+		<laneLink from="1" to="-1"/>
+	</connection>
+</junction>
+</OpenDRIVE>

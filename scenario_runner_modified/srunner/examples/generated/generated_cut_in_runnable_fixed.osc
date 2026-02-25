@@ -1,0 +1,32 @@
+scenario generated_cut_in_runnable:
+
+    route: RoadNetwork = load("Town05.xodr")
+
+    ego_vehicle: Vehicle
+    npc: Vehicle
+
+    start: Position = pos(0.0, 0.0, 0.0)
+    goal: Position = pos(150.0, 0.0, 0.0)
+
+    do serial:
+        initial:
+            ego_vehicle.set_position(start)
+            ego_vehicle.set_position(x: 0.0m, y: 0.0m, z: 0.0m)
+
+        ego_start:
+            ego_vehicle.follow_lane(goal)
+        adversary_behavior:
+            scenario cut_in_left:
+    ego_vehicle: Model3
+    npc: Mustang
+
+    do serial:
+        spawn_and_drive:
+            npc.drive() with:
+                lane(left_of: ego_vehicle, at: start)
+                position(10m, ahead_of: ego_vehicle, at: start)
+                speed(30kph)
+            ego_vehicle.set_position(x: 0.0m, y: 0.0m, z: 0.0m)
+
+        stop:
+            wait(5.0s)

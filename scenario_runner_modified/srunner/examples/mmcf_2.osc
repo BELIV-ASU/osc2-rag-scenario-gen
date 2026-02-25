@@ -1,0 +1,39 @@
+import basic.osc
+
+scenario top:
+    path: Path                      # A path in the map
+    path.set_map("Town01")    # specify map to use in this test
+	
+    ego_vehicle: Model3             # ego car
+    hero: Model3              # The other car
+    #ego_vehicle.set_position(x:199.949982m, y:330.459991m, z:0.300000m, pitch:0.0rad, yaw: -0.000092rad, roll:0.0rad)
+    ego_vehicle.set_position(x: 334.0, y: 4.0, z: 0.0)
+
+  
+    
+
+    event start
+    event end
+    
+
+    do serial:
+        initial: parallel(duration: 50s):
+            hero.drive(path) with:
+                speed(0kph)  
+            ego_vehicle.drive(path) with:
+                lane(same_as: hero, at: start)      
+                position(10m, ahead_of: hero, at: start)
+                speed(0kph)
+   
+                
+        ego_start: parallel(duration: 13s):                           
+            ego_vehicle.drive(path) with:
+                speed(17kph)
+            hero.drive(path) with:
+                speed(0kph)
+                
+        stop: parallel(duration: 10000s):
+            hero.drive(path) with:
+                speed(0kph)
+            ego_vehicle.drive(path) with:
+                speed(0kph)
